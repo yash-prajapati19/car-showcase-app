@@ -9,7 +9,6 @@ const connectDB = require("./db/connect");
 const buyACarRoute = require("./routes/cars");
 require("dotenv").config();
 
-// app.use(cors({ origin: 'https://rumrumcars-a9207.web.app'}));
 app.use(cors({ origin: "http://localhost:3002" }));
 
 app.use("/public", express.static(__dirname + "../../public"));
