@@ -1,7 +1,16 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const Car = require("../models/car");
+const {
+  getAllCars,
+  getSingleCar,
+  postCar,
+  deleteCar,
+  getCarImages,
+} = require('../controllers/cars');
 
-// Define CRUD operations for cars
+router.route('/').get(getAllCars).post(postCar);
+router.route('/car/:carID').get(getSingleCar).delete(deleteCar);
+// Car images
+router.get('/images', getCarImages);
 
 module.exports = router;
